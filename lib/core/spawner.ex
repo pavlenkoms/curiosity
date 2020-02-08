@@ -12,7 +12,7 @@ defmodule Curiosity.Spawner do
     )
   end
 
-  # It's horrible, but Task have no ability to terminate some one or return timeout without EXIT, and I
+  # It's horrible, but Task have no ability to terminate some one or return timeout without EXIT,
   # so my way is possible for small projects like this, but not for big ones, for bigger things I will search something else
   def await(%Task{ref: ref, pid: pid} = _task, timeout \\ 5000) do
     receive do
